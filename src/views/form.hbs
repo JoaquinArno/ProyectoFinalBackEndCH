@@ -1,0 +1,30 @@
+<form action="/logout" method="get">
+
+    <h1 style="display: inline-block;">Welcome {{user.username}}</h1> <button style="display: inline-block;"
+        type="submit">Logout</button>
+
+    <h3>Firstname: {{user.firstname}}</h3>
+    <h3>Lastname: {{user.lastname}}</h3>
+    <h3>Email: {{user.email}}</h3>
+    <h3>Phone: {{user.phone}}</h3>
+    <h3>Adress: {{user.address}}</h3>
+    <h3>Age: {{user.age}}</h3>
+
+    <img style="width: 110px" src="/{{user.photo}}" alt="img">
+</form>
+
+<h1>Add product</h1>
+
+<form id="productForm">
+
+    <input id="productInput" type="text" name="title" placeholder="Product name">
+    <input id="priceInput" type="number" step="0.01" id="price" name="price" placeholder="Price">
+    <input id="imgInput" type="text" name="thumbnail" placeholder="Img URL">
+    <input id="categoryInput" type="text" name="category" placeholder="Category">
+    <input type="submit">
+</form>
+
+<div id="productsContainer"></div>
+{{> chat}}
+
+

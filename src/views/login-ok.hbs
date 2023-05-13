@@ -1,0 +1,35 @@
+<div>
+
+    <div style="background-color: green;color: white;">
+
+        <h1>LOGIN SUCCESFUL!</h1>
+        <h2><i>Welcome {{usuario}}</i></h2>
+        <br>
+        <h3>Firstname: {{nombre}}</h3>
+        <h3>Lastname: {{apellido}}</h3>
+        <h3>Email: {{email}}</h3>
+        <h3>Phone: {{tel}}</h3>
+        <h3>Adress: {{direccion}}</h3>
+        <h3>Age: {{edad}}</h3>
+
+        <img style="width: 110px" src="{{imagen}}" alt="img">
+
+        <form action="/logout" method="get">
+
+            <input type="submit" value="LOGOUT"/>
+        </form>
+    </div>
+</div>
+
+<script>
+    function redireccionar(pagina) {
+        location.href = pagina;
+    } 
+    function () {
+        console.log('go back');
+        setTimeout(() => redireccionar('/productos'), 2500);
+    }
+    back();
+    
+</script>
+

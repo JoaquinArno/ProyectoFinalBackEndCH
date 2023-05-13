@@ -1,0 +1,54 @@
+<form action="/logout" method="get">
+
+    <h1 style="display: inline-block;">Welcome {{user.username}}</h1> <button style="display: inline-block;"
+        type="submit">Logout</button>
+
+    <h3>Firstname: {{user.firstname}}</h3>
+    <h3>Lastname: {{user.lastname}}</h3>
+    <h3>Email: {{user.email}}</h3>
+    <h3>Phone: {{user.phone}}</h3>
+    <h3>Adress: {{user.address}}</h3>
+    <h3>Age: {{user.age}}</h3>
+
+    <img style="width: 110px" src="/{{user.photo}}" alt="Img">
+
+</form>
+
+<div style="border: 1px solid black; width:290px">
+    <h2>Cart</h2>
+
+    <ul>
+        {{#if cart.products.length}}
+        {{#each cart.products}}
+        <h2>{{this.title}}</h2>
+        <img src="{{this.thumbnail}}" width="110">
+        <p style="font-weight: bold;">${{this.price}}</p>
+        <p style="font-weight: bold;">Qty: {{this.quantity}}</p>
+        {{/each}}
+        {{/if}}
+    </ul>
+
+    {{#with cart}}
+
+    <form action="/cart/finish/{{this._id}}" method="POST">
+        <button type="submit" name="buy">Buy</button>
+    </form>
+
+    {{/with}}
+
+</div>
+
+{{#if products.length}}
+{{#each products}}
+
+<h2>{{this.title}}</h2>
+<img src={{this.thumbnail}} width="110">
+<p>{{this.price}}</p>
+<form action="/cart/{{this._id}}" method="POST">
+    <button type="submit" name="add-to-cart">Add to cart</button>
+</form>
+{{/each}}
+{{/if}}
+
+
+

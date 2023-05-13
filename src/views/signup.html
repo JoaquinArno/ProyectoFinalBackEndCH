@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <div class="container my-5">
+
+        <div class="jumbotron">
+
+            <h1>SIGNUP</h1>
+
+            <br />
+
+            <form id="signup-form" class="form" role="form" action="/register" enctype="multipart/form-data"
+                method="post" autocomplete="off">
+
+                <div class="form-group">
+                    <input name="username" placeholder="Username" class="form-control" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <input name="password" id="password" placeholder="Password" class="form-control" type="password"
+                        required />
+                </div>
+
+                <br />
+
+                <div class="form-group">
+
+                    <input name="firstname" placeholder="Firstname" class="form-control" type="text" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="lastname" placeholder="Lastname" class="form-control" type="text" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="email" placeholder="Email" class="form-control" type="email" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="phone" placeholder="Phone" class="form-control" type="tel" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="address" placeholder="Address" class="form-control" type="address" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="age" placeholder="Age" class="form-control" type="number" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input name="photo" class="form-control" type="file" required />
+                </div>
+
+                <div class="form-group">
+
+                    <input class="btn btn-success my-3" type="submit" value="Singup" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        
+        const form = document.getElementById('signup-form');
+        const password = document.getElementById("password")
+        const checkPassword = document.getElementById("checkPassword")
+        form.addEventListener('submit', (event) => {
+            if (password.value !== checkPassword.value) {
+                event.preventDefault();
+                alert('Las contraseñas no coinciden. Por favor, verifique los campos de contraseña.');
+            }
+        });
+    </script>
+</body>
+</html>
